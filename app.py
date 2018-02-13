@@ -30,8 +30,8 @@ if __name__ == '__main__':
     #ip = '0.0.0.0'#application.app.config['IP']
     HOST_NAME = os.environ.get('OPENSHIFT_APP_DNS','localhost')
     APP_NAME = os.environ.get('OPENSHIFT_APP_NAME','conveniences')
-    IP = os.environ.get('OPENSHIFT_PYTHON_IP','127.0.0.1')
+    IP = os.environ.get('OPENSHIFT_PYTHON_IP','0.0.0.0')
     PORT = int(os.environ.get('OPENSHIFT_PYTHON_PORT',8000))
     print(IP)
     print(PORT)
-    Server('52.60.125.17',8081)
+    Server('0.0.0.0',8000)
