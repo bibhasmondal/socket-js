@@ -104,7 +104,6 @@ import selectors
 import os
 import sys
 import threading
-from threading import Thread
 from io import BufferedIOBase
 from time import monotonic as time
 
@@ -181,7 +180,7 @@ class BaseServer:
         
 
     def serve_forever(self, poll_interval=0.5):
-        threading.Timer(0.0,self.serve_forever,args=(poll_interval,)).start()
+        #threading.Timer(0.0,self.serve_forever,args=(poll_interval,)).start()
         """Handle one request at a time until shutdown.
         Polls for shutdown every poll_interval seconds. Ignores
         self.timeout. If you need to do periodic tasks, do them in
@@ -195,7 +194,7 @@ class BaseServer:
             # times.
             with _ServerSelector() as selector:
                 selector.register(self, selectors.EVENT_READ)
-                if not self.__shutdown_request:
+                while not self.__shutdown_request:
                     ready = selector.select(poll_interval)
                     if ready:
                         self._handle_request_noblock()
