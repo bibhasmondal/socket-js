@@ -34,4 +34,4 @@ if __name__ == '__main__':
     PORT = int(os.environ.get('OPENSHIFT_PYTHON_PORT',8000))
     print(IP)
     print(PORT)
-    Server('0.0.0.0',8080)
+    Server('0.0.0.0',80)
