@@ -30,7 +30,7 @@ if __name__ == '__main__':
     #port = 9001#application.app.config['PORT']
     #ip = '0.0.0.0'#application.app.config['IP']
     HOST_NAME = os.environ.get('OPENSHIFT_APP_DNS','localhost')
-	APP_NAME = os.environ.get('OPENSHIFT_APP_NAME','conveniences')
-	IP = os.environ.get('OPENSHIFT_PYTHON_IP','127.0.0.1')
-	PORT = int(os.environ.get('OPENSHIFT_PYTHON_PORT',8000))
+    APP_NAME = os.environ.get('OPENSHIFT_APP_NAME','conveniences')
+    IP = os.environ.get('OPENSHIFT_PYTHON_IP','127.0.0.1')
+    PORT = int(os.environ.get('OPENSHIFT_PYTHON_PORT',8000))
     Server(IP,PORT)
