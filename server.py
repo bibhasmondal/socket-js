@@ -24,8 +24,8 @@ class Server:
 
 
 	def msg_received(self,client, server, msg):
-	    msg = "Client (%s) : %s" % (client['id'], msg)
-	    print (msg)
+	    #msg = "Client (%s) : %s" % (client['id'], msg)
+	    #print (msg)
 	    clientid = client['id']
 	    for cl in self.clients:
 	        if cl != clientid:
