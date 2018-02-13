@@ -32,4 +32,5 @@ if __name__ == '__main__':
     APP_NAME = os.environ.get('OPENSHIFT_APP_NAME','conveniences')
     IP = os.environ.get('OPENSHIFT_PYTHON_IP','127.0.0.1')
     PORT = int(os.environ.get('OPENSHIFT_PYTHON_PORT',8000))
-    Server(IP,PORT)
+    print(IP+PORT)
+    Server('0.0.0.0',8000)
