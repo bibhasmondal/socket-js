@@ -5,10 +5,9 @@
 # provided (cherrypi, gevent), but this file may be altered to run
 # whatever framework is desired - or a completely customized service.
 
-'''import imp
+import imp
 import os
 import sys
-import server
 
 try:
     virtenv = os.path.join(os.environ.get('OPENSHIFT_PYTHON_DIR','.'), 'virtenv')
@@ -21,7 +20,7 @@ try:
         exec(open(virtualenv).read(), dict(__file__=virtualenv))
                                     
 except IOError:
-    pass'''
+    pass
 
 # IMPORTANT: Put any additional includes below this line.  If placed above this
 # line, it's possible required libraries won't be in your searchable path
