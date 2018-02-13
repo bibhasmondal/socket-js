@@ -11,15 +11,15 @@ class Server:
 	        self.clients.pop(client['id'])
 	    except:
 	        print ("Error in removing client %s" % client['id'])
-	    for cl in self.clients.values():
-	        server.send_message(cl, msg)
+	    #for cl in self.clients.values():
+	        #server.send_message(cl, msg)
 
 
 	def new_client(self,client, server):
 	    msg = "New client (%s) connected" % client['id']
 	    print (msg)
-	    for cl in self.clients.values():
-	        server.send_message(cl, msg)
+	    #for cl in self.clients.values():
+	        #server.send_message(cl, msg)
 	    self.clients[client['id']] = client
 
 
